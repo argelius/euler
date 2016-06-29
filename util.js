@@ -44,5 +44,21 @@ const divisors = (n) => {
   return rv;
 };
 
+const memoize = (fn) => {
+  const cache = {};
 
-module.exports = {range, sum, prod, sieve, divisors};
+  return (arg) => {
+    if (typeof cache[arg] !== 'undefined') {
+      return cache[arg];
+    }
+
+    return cache[arg] = fn(arg);
+  };
+};
+
+const factorial = (n) => prod(range(1, n + 1));
+
+const binomial = (n, k) => prod(range(k + 1, n + 1)) / factorial(n - k);
+
+
+module.exports = {range, sum, prod, sieve, divisors, memoize, factorial, binomial};
