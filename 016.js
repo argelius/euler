@@ -1,11 +1,9 @@
-const sum = require('./util').sum;
+const bigInteger = require('big-integer');
 
-const digit_sum = (n) => sum([...n.toString()].map((n) => parseInt(n)));
+const N = bigInteger(2).pow(bigInteger(1000)).toString();
 
-let s = 1;
+const sum = [...N]
+  .map((n) => parseInt(n))
+  .reduce((a, b) => a + b);
 
-for (let i = 0; i < 20; i++) {
-  s += digit_sum(s);
-
-  console.log(s);
-}
+console.log(sum);
