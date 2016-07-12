@@ -18,6 +18,7 @@
   "homepage": "https://github.com/argelius/euler#readme",
   "dependencies": {
     "big-integer": "^1.6.15",
+    "moment": "^2.14.1",
     "written-number": "^0.2.5"
   }
 }
